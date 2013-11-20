@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+<script src='future.js'></script>
+<script>
+
+function wait(ms) {
+    var deferred = Future.deferred();
+    setTimeout(deferred.resolve, ms);
+    return deferred.promise;
+}
+
+console.log('waiting...');
+
+wait(1000)
+    .then(function(value){ console.log('finished waiting'); });
+
+</script>
+</body>
+</html>
